@@ -13,8 +13,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/johannesboyne/gofakes3"
-	"github.com/johannesboyne/gofakes3/internal/s3io"
+	"github.com/ideal/gofakes3"
+	"github.com/ideal/gofakes3/internal/s3io"
 	"github.com/spf13/afero"
 )
 

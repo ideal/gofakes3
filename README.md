@@ -1,5 +1,5 @@
-[![CircleCI](https://circleci.com/gh/johannesboyne/gofakes3.svg?style=svg)](https://circleci.com/gh/johannesboyne/gofakes3)
-[![Codecov](https://codecov.io/gh/johannesboyne/gofakes3/branch/master/graph/badge.svg)](https://codecov.io/gh/johannesboyne/gofakes3)
+[![CircleCI](https://circleci.com/gh/ideal/gofakes3.svg?style=svg)](https://circleci.com/gh/johannesboyne/gofakes3)
+[![Codecov](https://codecov.io/gh/ideal/gofakes3/branch/master/graph/badge.svg)](https://codecov.io/gh/johannesboyne/gofakes3)
 
 ![Logo](/GoFakeS3.png)
 # AWS (GOFAKE)S3
@@ -195,7 +195,7 @@ exports.handle = function (e, ctx) {
 
 ## Contributors
 
-A big thank you to all the [contributors](https://github.com/johannesboyne/gofakes3/graphs/contributors),
+A big thank you to all the [contributors](https://github.com/ideal/gofakes3/graphs/contributors),
 especially [Blake @shabbyrobe](https://github.com/shabbyrobe) who pushed this
 little project to the next level!
 
