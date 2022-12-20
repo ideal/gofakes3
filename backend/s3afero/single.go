@@ -173,6 +173,8 @@ func (db *SingleBucketBackend) getBucketWithArbitraryPrefixLocked(bucket string,
 			return nil
 		}
 
+		objectName = strings.TrimPrefix(objectName, "bucket"+"/")
+
 		size := info.Size()
 		mtime := info.ModTime()
 		meta, err := db.metaStore.loadMeta(bucket, objectName, size, mtime)
