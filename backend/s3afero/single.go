@@ -3,7 +3,6 @@ package s3afero
 import (
 	"crypto/md5"
 	"encoding/hex"
-	"fmt"
 	"io"
 	"log"
 	"os"
@@ -164,10 +163,12 @@ func (db *SingleBucketBackend) getBucketWithArbitraryPrefixLocked(bucket string,
 
 		objectPath := filepath.ToSlash(path)
 		parts := strings.SplitN(objectPath, "/", 2)
-		if len(parts) != 2 {
-			panic(fmt.Errorf("unexpected path %q", path)) // should never happen
+		objectName := ""
+		if len(parts) == 1 {
+			objectName = parts[0]
+		} else {
+			objectName = parts[1]
 		}
-		objectName := parts[1]
 
 		if !prefix.Match(objectName, nil) {
 			return nil
