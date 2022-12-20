@@ -173,7 +173,7 @@ func (db *SingleBucketBackend) getBucketWithArbitraryPrefixLocked(bucket string,
 			return nil
 		}
 
-		objectName = strings.TrimPrefix(objectName, "bucket"+"/")
+		objectName = strings.TrimPrefix(objectName, bucket+"/")
 
 		size := info.Size()
 		mtime := info.ModTime()
