@@ -28,7 +28,6 @@ import (
 // It is STRONGLY recommended that the metadata Fs is not contained within the
 // `/buckets` subdirectory as that could make a significant mess, but this is
 // infeasible to validate, so you're encouraged to be extremely careful!
-//
 type SingleBucketBackend struct {
 	lock      sync.Mutex
 	fs        afero.Fs
@@ -158,7 +157,7 @@ func (db *SingleBucketBackend) getBucketWithFilePrefixLocked(bucket string, pref
 func (db *SingleBucketBackend) getBucketWithArbitraryPrefixLocked(bucket string, prefix *gofakes3.Prefix) (*gofakes3.ObjectList, error) {
 	response := gofakes3.NewObjectList()
 
-	if err := afero.Walk(db.fs, filepath.FromSlash(bucket), func(path string, info os.FileInfo, err error) error {
+	if err := afero.Walk(db.fs, filepath.FromSlash("."), func(path string, info os.FileInfo, err error) error {
 		if err != nil || info.IsDir() {
 			return err
 		}
