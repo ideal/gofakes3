@@ -162,19 +162,11 @@ func (db *SingleBucketBackend) getBucketWithArbitraryPrefixLocked(bucket string,
 		}
 
 		objectPath := filepath.ToSlash(path)
-		parts := strings.SplitN(objectPath, "/", 2)
-		objectName := ""
-		if len(parts) == 1 {
-			objectName = parts[0]
-		} else {
-			objectName = parts[1]
-		}
+		objectName := objectPath
 
 		if !prefix.Match(objectName, nil) {
 			return nil
 		}
-
-		objectName = strings.TrimPrefix(objectName, bucket+"/")
 
 		size := info.Size()
 		mtime := info.ModTime()
